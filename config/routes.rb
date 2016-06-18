@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # api namespace & versioning
-  namespace :api, defaults: {format: :json }, constraints: { subdomain: "api" }, path: "/" do
+  namespace :api, defaults: {format: :json } do
 
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
-
+      resources :providers, only: [:index, :show, :update, :destroy]
     end
   end
 
