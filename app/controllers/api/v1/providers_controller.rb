@@ -1,6 +1,9 @@
 module Api
   module V1
     class ProvidersController < ApplicationController
+      # get the provider from the URL before performing these actions
+      before_action :get_provider, only: [:show, :update, :destroy]
+
       # GET /api/v1/providers
       def index
         render json: Provider.all, status: 200
@@ -8,11 +11,10 @@ module Api
 
       # GET /api/v1/providers/:id
       def show
-        provider = Provider.find(params[:id])
-        if provider
-          render json: provider, status: 200
+        if @provider
+          render json: @provider, status: 200
         else
-          render json: {message: "Provider not found"}, status: 404 # not found
+          render json: { error: "Provider not found" }, status: 404 # not found
         end
       end
 
@@ -22,35 +24,38 @@ module Api
         if provider.save
           render json: {provider: provider, message: "Provider created successfully"}, status: 201  # created status
         else
-          render json: { message: "Validation Failed"}, status: 422 # Unprocessable Entity status
+          render json: { error: "Validation Failed" }, status: 422 # Unprocessable Entity status
         end
       end
 
       # PUT /api/v1/providers/:id
       def update
-        provider = Provider.find(params[:id])
-        if provider
-          provider.update_attributes(provider_params)
-          render json: provider, status: 201
+        if @provider
+          @provider.update_attributes(provider_params)
+          render json: @provider, status: 201
         else
-          render json: { message: "Validation Failed"}, status: 422
+          render json: { error: "Validation Failed" }, status: 422
         end
       end
 
       # DELETE /api/v1/providers/:id
       def destroy
-        provider = Provider.find(params[:id])
-        if provider
-          provider.destroy
-          render :nothing, status: 402
+        if @provider
+          @provider.destroy
+          render json: :nothing, status: 204  # no content status
         else
-          render json: { message: "Provider not found" }, status: 404
+          render json: { error: "Provider not found"  }, status: 404
         end
       end
 
       private
         def provider_params
           params.require(:provider).permit(:name, :location, :phone_number, :provides => [])
+        end
+
+        # returns provider if found, otherwise return nothing
+        def get_provider
+          @provider = Provider.find_by(id: params[:id])
         end
     end
   end
