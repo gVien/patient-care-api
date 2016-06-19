@@ -18,7 +18,7 @@ Provider.create(name: "Justin's Care Home",
 provides_option = ["Diabetes Care","Dialysis","Medication Management","Outpatient Therapy","Oxygen","Physical Therapy","Speech Therapy","Wound Care"]
 
 10.times do |n|
-  name = Faker::Company.name + "Care" + ["Center", "Home"].sample
+  name = Faker::Company.name + " Care " + ["Center", "Home"].sample
   location = ["San Francisco, CA", "Los Angelos, CA", "Oakland, CA", "San Jose, CA"].sample
   phone_number = Faker::PhoneNumber.phone_number
 

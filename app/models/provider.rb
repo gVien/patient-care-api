@@ -17,8 +17,8 @@ class Provider < ActiveRecord::Base
 
       invalid_provides_option = provides - provides_option  # gives an array of options not in `provides_options` array
 
-      if invalid_provides_option .length > 0
-        invalid_provides_option .each do |invalid_provide|
+      if invalid_provides_option.length > 0
+        invalid_provides_option.each do |invalid_provide|
           errors.add(:invalid_provides, invalid_provide + "provide is not part of the provides option.")
         end
       end
