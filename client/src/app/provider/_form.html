@@ -1,6 +1,6 @@
 <div class="form-group">
   <div class="col-sm-12 reset-padding-right">
-    <label class="sr-only" for="name">First Name</label>
+    <label class="sr-only" for="name">Name</label>
     <input class="form-control" type="text" ng-model="provider.name" id="name"
     placeholder="Name *" required>
   </div>
@@ -8,7 +8,7 @@
 
 <div class="form-group">
   <div class="col-sm-12 reset-padding-left">
-    <label class="sr-only" for="location">Last Name</label>
+    <label class="sr-only" for="location">Location</label>
     <input class="form-control" type="text" ng-model="provider.location" id="location" placeholder="Location *" required>
   </div>
 </div>
@@ -16,17 +16,17 @@
 <div class="form-group">
   <div class="col-sm-12 reset-padding-right">
     <label class="sr-only" for="phonenumber">Phone Number</label>
-    <input class="form-control" type="number" ng-model="provider.phone_number" id="phone" placeholder="Phone Number">
+    <input class="form-control" type="text" ng-model="provider.phone_number" id="phone" placeholder="Phone Number">
   </div>
 </div>
 
 <div class="form-group">
   <div class="col-sm-12 reset-padding-left">
     <p class="provides-option">Please select all the options your facility can provide:</p>
-    <div class="col-sm-4" ng-repeat="provide in providerCreate.providesOptions">
+    <div class="col-sm-4" ng-repeat="provide in providesOptions">
       <div class="checkbox">
         <label>
-          <input type="checkbox" class="provides" ng-model="provider.provides[providesOptions.indexOf(provide)]" ng-true-value="'{{ provide }}'">{{ provide }}
+          <input type="checkbox" class="provides" ng-model="provider.provides[providesOptions.indexOf(provide)]" ng-true-value="'{{ provide }}'" ng-false-value="undefined" ng-checked="provider.provides.indexOf(provide) > -1">{{ provide }}
         </label>
       </div>
     </div>

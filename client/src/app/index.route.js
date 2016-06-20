@@ -19,6 +19,12 @@
         templateUrl: 'app/provider/providerCreate.html',
         controller: 'ProvidersCreateController',
         controllerAs: 'providerCreate'
+      })
+      .state('updateProvider', {
+        url: '/providers/:id/edit',
+        templateUrl: 'app/provider/providerUpdate.html',
+        controller: 'ProvidersUpdateController',
+        controllerAs: 'providerUpdate'
       });
 
     $urlRouterProvider.otherwise('/');

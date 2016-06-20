@@ -6,10 +6,10 @@
     .controller('ProvidersCreateController', ProvidersCreateController);
 
   /** @ngInject */
-  function ProvidersCreateController(Provider, $state, $scope) {
+  function ProvidersCreateController(Provider, $state, $scope, toastr) {
     var vm = this;
 
-    vm.providesOptions = ["Diabetes Care","Dialysis","Medication Management","Outpatient Therapy","Oxygen","Physical Therapy","Speech Therapy","Wound Care"]
+    $scope.providesOptions = ["Diabetes Care","Dialysis","Medication Management","Outpatient Therapy","Oxygen","Physical Therapy","Speech Therapy","Wound Care"]
 
     $scope.provider = new Provider();
 
@@ -28,6 +28,7 @@
 
       $scope.provider.$save(function() {
         $state.go('providerIndex');
+        toastr.success($scope.provider.provider.name + " provider has been created!")
       });
     };
   }

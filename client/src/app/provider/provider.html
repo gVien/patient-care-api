@@ -36,8 +36,8 @@
 
             <div class="col-sm-3">
               <div class="buttons">
-                <button class="btn btn-danger btn-delete">Delete</button>
-                <button class="btn btn-info btn-update">Update</button>
+                <button class="btn btn-danger btn-delete" ng-click="deleteProvider(provider)">Delete</button>
+                <a class="btn btn-info btn-update" href="/#/providers/{{provider.id}}/edit">Update</a>
               </div>
             </div>
 

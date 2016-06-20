@@ -6,7 +6,7 @@
     .controller('ProvidersIndexController', ProvidersIndexController);
 
   /** @ngInject */
-  function ProvidersIndexController(Provider, $uibModal, $state, $scope) {
+  function ProvidersIndexController(Provider, $uibModal, $state, $scope, $window, toastr) {
     var vm = this;
     vm.providers = Provider.query();
 
@@ -18,5 +18,15 @@
     //     scope: $scope
     //   })
     // };
+
+    // DELETE /api/v1/providers/:id
+    $scope.deleteProvider = function(provider) {
+      if (confirm(provider.name + " provider will be deleted. Confirm?")) {
+        provider.$delete(function() {
+          vm.providers = Provider.query();  // reload data
+          toastr.success(provider.name + " provider has been deleted!");
+        });
+      }
+  }
   }
 })();
