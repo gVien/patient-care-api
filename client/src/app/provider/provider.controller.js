@@ -6,7 +6,8 @@
     .controller('ProviderController', ProviderController);
 
   /** @ngInject */
-  function ProviderController() {
-
+  function ProviderController($scope, Provider) {
+    var vm = this;
+    vm.providers = Provider.query();
   }
 })();
