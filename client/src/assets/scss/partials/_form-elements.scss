@@ -1,0 +1,39 @@
+#provider-form {
+  input, textarea {
+    margin-bottom: 16px;
+  }
+
+  textarea {
+    height: 125px;
+    resize: vertical;
+    margin-bottom: 16px;
+  }
+
+  .form-group {
+    margin-bottom: 0;
+
+    input:not([type='checkbox']) {
+      height: 50px;
+    }
+
+    .btn-submit {
+      margin-top: 10px;
+    }
+  }
+
+/*  @media screen and (max-width: 768px) {
+    & [class*="col-"] {
+      padding: 0;
+    }
+  }*/
+
+/*  @media screen and (min-width: 768px) {
+    .reset-padding-right {
+      padding-right: 8px;
+    }
+
+    .reset-padding-left {
+      padding-left: 8px;
+    }
+  }*/
+}

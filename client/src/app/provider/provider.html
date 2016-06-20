@@ -1,50 +1,42 @@
-<div class="container">
+<a ui-sref="createProvider" class="btn btn-primary btn-add-provider">Add a Care Provider</a>
 
-  <div>
-    <acme-navbar creation-date="main.creationDate"></acme-navbar>
-  </div>
-
-<a ui-sref="createProvider" class="btn btn-primary">Add a Care Provider</a>
-
-  <div id="providers-section">
-    <div class="row" ng-repeat="provider in provider.providers">
-      <div class="col-sm-12">
-        <div class="well well-lg">
-          <div class="row">
-            <div class="col-sm-9">
-              <div class="provider-group">
-                <span class="name provider-label">Name:</span>
-                <span class="name-data"> {{ provider.name }} </span>
-              </div>
-              <div class="provider-group">
-                <span class="location provider-label">Location:</span>
-                <span class="location">{{ provider.location }}</span>
-              </div>
-              <div class="provider-group">
-                <span class="phone provider-label">Phone:</span>
-                <span class="phone-data">{{ provider.phone_number || "N/A" }}</span>
-              </div>
-              <div class="provider-group">
-                <span class="provides provider-label">Provides:</span>
-                <span class="provides-data">
-                  <ul class="provide-list">
-                    <li class="label label-warning provide" ng-repeat="provide in provider.provides"> {{ provide }}</li>
-                  </ul>
-                </span>
-              </div>
+<div id="providers-section">
+  <div class="row" ng-repeat="provider in provider.providers">
+    <div class="col-sm-12">
+      <div class="well well-lg">
+        <div class="row">
+          <div class="col-sm-9">
+            <div class="provider-group">
+              <span class="name provider-label">Name:</span>
+              <span class="label label-info name-data"> {{ provider.name }} </span>
             </div>
-
-            <div class="col-sm-3">
-              <div class="buttons">
-                <button class="btn btn-danger btn-delete" ng-click="deleteProvider(provider)">Delete</button>
-                <a class="btn btn-info btn-update" href="/#/providers/{{provider.id}}/edit">Update</a>
-              </div>
+            <div class="provider-group">
+              <span class="location provider-label">Location:</span>
+              <span class="label label-info location">{{ provider.location }}</span>
             </div>
-
+            <div class="provider-group">
+              <span class="phone provider-label">Phone:</span>
+              <span class="label label-info phone-data">{{ provider.phone_number || "N/A" }}</span>
+            </div>
+            <div class="provider-group">
+              <span class="provides provider-label">Provides:</span>
+              <span class="provides-data">
+                <ul class="provide-list">
+                  <li class="label label-warning provide" ng-repeat="provide in provider.provides"> {{ provide }}</li>
+                </ul>
+              </span>
+            </div>
           </div>
+
+          <div class="col-sm-3">
+            <div class="buttons">
+              <button class="btn btn-danger btn-delete" ng-click="deleteProvider(provider)">Delete</button>
+              <a class="btn btn-info btn-update" href="/#/providers/{{provider.id}}/edit">Update</a>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
-
 </div>

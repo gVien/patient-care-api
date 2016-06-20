@@ -5,6 +5,12 @@
 $navbar-inverse-link-color: #5AADBB;
 $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
+$fa-font-path: "/bower_components/font-awesome/fonts";
+@import "../../bower_components/font-awesome/scss/font-awesome.scss";
+
+@import "../assets/scss/partials/_form-elements.scss";
+@import "../assets/scss/partials/_setting.scss";
+
 /**
  *  Do not remove the comments below. It's the markers used by wiredep to inject
  *  sass dependencies when defined in the bower.json of your dependencies
@@ -12,47 +18,67 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 // bower:scss
 // endbower
 
-.provide-list, .provider-group {
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 10px;
+.fork-me-banner {
+  img {
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+  }
 }
 
-.provider-group {
-  .provider-label {
-    font-size: 20px;
+.btn-add-provider {
+  margin-bottom: 15px;
+}
+
+#providers-section {
+  .provide-list, .provider-group {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+    margin-bottom: 7px;
   }
 
-  .provide-list {
-    padding-left: 0;
-    max-width: 300px;
+  .provider-group {
+    .provider-label {
+      font-size: $font-size-large;
+    }
 
-    .provide {
-      margin: 0 5px;
-      display: inline-block;
+    .provide-list {
+      padding-left: 0;
+      max-width: 300px;
+
+      .provide {
+        margin: 5px 5px 0;
+        display: inline-block;
+      }
     }
   }
-}
 
-.buttons {
-  position: absolute;
-  right: 10px;
-
-  .btn-delete, .btn-update {
-    width: 75px;
-    margin-right: 5px;
-  }
-
-  @media(max-width: 768px) {
-    position: static;
+  .buttons {
+    position: absolute;
+    right: 10px;
 
     .btn-delete, .btn-update {
-      width: 100%;
-      margin-top: 10px;
+      width: 75px;
+      margin-right: 5px;
+    }
+
+    @media(max-width: 768px) {
+      position: static;
+
+      .btn-delete, .btn-update {
+        width: 100%;
+        margin-top: 10px;
+      }
     }
   }
 }
 
+.label {
+  font-size: 85%;
+}
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically
