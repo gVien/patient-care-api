@@ -11,9 +11,17 @@ var gutil = require('gulp-util');
 /**
  *  The main paths of your project handle these with care
  */
+// exports.paths = {
+//   src: 'src',
+//   dist: 'dist',
+//   tmp: '.tmp',
+//   e2e: 'e2e'
+// };
+
+// heroku deployment
 exports.paths = {
   src: 'src',
-  dist: 'dist',
+  dist: '../public',
   tmp: '.tmp',
   e2e: 'e2e'
 };
