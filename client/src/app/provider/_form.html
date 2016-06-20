@@ -1,5 +1,5 @@
 <div class="form-group">
-  <div class="col-sm-12 reset-padding-right">
+  <div class="col-sm-12">
     <label class="sr-only" for="name">Name</label>
     <input class="form-control" type="text" ng-model="provider.name" id="name"
     placeholder="Name *" required>
@@ -7,21 +7,21 @@
 </div>
 
 <div class="form-group">
-  <div class="col-sm-12 reset-padding-left">
+  <div class="col-sm-12">
     <label class="sr-only" for="location">Location</label>
     <input class="form-control" type="text" ng-model="provider.location" id="location" placeholder="Location *" required>
   </div>
 </div>
 
 <div class="form-group">
-  <div class="col-sm-12 reset-padding-right">
+  <div class="col-sm-12">
     <label class="sr-only" for="phonenumber">Phone Number</label>
-    <input class="form-control" type="text" ng-model="provider.phone_number" id="phone" placeholder="Phone Number">
+    <input class="form-control" type="text" ng-model="provider.phone_number" id="phone" placeholder="Phone Number" ng-pattern="/^\(?\d{3}\)?[- ]?\d{3}[- ]?\d{4}$/" ng-trim="false" number-validation>
   </div>
 </div>
 
 <div class="form-group">
-  <div class="col-sm-12 reset-padding-left">
+  <div class="col-sm-12">
     <p class="provides-option">Please select all the options your facility can provide:</p>
     <div class="col-sm-4" ng-repeat="provide in providesOptions">
       <div class="checkbox">
