@@ -1,0 +1,99 @@
+<!-- Modal head -->
+<div class="modal-header">
+  <button type="button" class="close" ng-click="modal.close()"><span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title">Fill out the form below to learn more about BrightEdge Platform. We'll get back to you in 1-2 days.</h4>
+</div>
+
+<!-- Modal Body -->
+<div class="modal-body">
+  <form class="provider-form" id="provider-form" ng-submit="provider.addProvider()">
+    <div class="form-group">
+      <div class="col-sm-12 reset-padding-right">
+        <label class="sr-only" for="name">First Name</label>
+        <input class="form-control" type="text" ng-model="provider.name" id="name"
+        placeholder="Name *" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-12 reset-padding-left">
+        <label class="sr-only" for="location">Last Name</label>
+        <input class="form-control" type="text" ng-model="provider.location" id="location" placeholder="Location *" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-12 reset-padding-right">
+        <label class="sr-only" for="phonenumber">Phone Number</label>
+        <input class="form-control" type="number" ng-model="provider.phone_number" id="phone" placeholder="Phone Number">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-12 reset-padding-left">
+        <p class="provides-option">Please select all the options your facility can provide:</p>
+        <div class="col-sm-4">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" class="provides" ng-model="provider.provides[0]" value="Diabetes Care">Diabetes Care
+            </label>
+          </div>
+
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" class="provides" ng-model="provider.provides[1]" value="Dialysis">Dialysis
+            </label>
+          </div>
+
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" class="provides" ng-model="provider.provides[2]" value="Medication Management">Medication Management
+            </label>
+          </div>
+        </div><!-- end .col-sm-4 -->
+
+        <div class="col-sm-4">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" class="provides" ng-model="provider.provides[3]" value="Outpatient Therapy">Outpatient Therapy
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" class="provides" ng-model="provider.provides[4]" value="Oxygen">Oxygen
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" class="provides" ng-model="provider.provides[5]" value="Physical Therapy">Physical Therapy
+            </label>
+          </div>
+        </div><!-- end .col-sm-4 -->
+
+        <div class="col-sm-4">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" class="provides" ng-model="provider.provides[6]" value="Speech Therapy">Speech Therapy
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" class="provides" ng-model="provider.provides[7]" value="Wound Care">Wound Care
+            </label>
+          </div>
+        </div>  <!-- end .col-sm-4 -->
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-12">
+        <input class="btn btn-primary btn-block btn-submit" type="submit" value="Add Provider" data-disable-with="Sending...">
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- modal footer -->
+<div class="modal-footer">
+  <a class="btn" href="" ng-click="modal.close()">Cancel</a>
+</div>

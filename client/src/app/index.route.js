@@ -11,8 +11,14 @@
       .state('providerIndex', {
         url: '/',
         templateUrl: 'app/provider/provider.html',
-        controller: 'ProviderController',
+        controller: 'ProvidersIndexController',
         controllerAs: 'provider'
+      })
+      .state('createProvider', {
+        url: '/providers/new',
+        templateUrl: 'app/provider/providerCreate.html',
+        controller: 'ProvidersCreateController',
+        controllerAs: 'providerCreate'
       });
 
     $urlRouterProvider.otherwise('/');
