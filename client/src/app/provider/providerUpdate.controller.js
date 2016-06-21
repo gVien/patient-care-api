@@ -20,7 +20,7 @@
     $scope.updateProvider = function() {
       $scope.provider.$update(function() {
         $state.go('providerIndex');
-        toastr.success($scope.provider.name + " provider has been updated!")
+        toastr.success($scope.provider.name + " provider has been updated!", "Updated Successfully:")
       });
     };
     }

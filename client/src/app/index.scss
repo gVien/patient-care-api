@@ -5,7 +5,7 @@
 $navbar-inverse-link-color: #5AADBB;
 $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
-$fa-font-path: "/bower_components/font-awesome/fonts";
+$fa-font-path: "../../bower_components/font-awesome/fonts";
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
 
 @import "../assets/scss/partials/_form-elements.scss";
@@ -20,7 +20,7 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 .fork-me-banner {
   img {
-    z-index: 9999;
+    z-index: 10;
     position: absolute;
     top: 0;
     right: 0;
@@ -79,6 +79,11 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 .label {
   font-size: 85%;
 }
+
+#toast-container {
+  z-index: 99999 !important;
+}
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

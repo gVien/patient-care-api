@@ -28,7 +28,7 @@
 
       $scope.provider.$save(function() {
         $state.go('providerIndex');
-        toastr.success($scope.provider.provider.name + " provider has been created!")
+        toastr.success($scope.provider.provider.name + " provider has been created!", "Created Successfully:")
       });
     };
   }

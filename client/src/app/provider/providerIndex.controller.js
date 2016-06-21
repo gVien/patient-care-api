@@ -24,7 +24,7 @@
       if (confirm(provider.name + " provider will be deleted. Confirm?")) {
         provider.$delete(function() {
           vm.providers = Provider.query();  // reload data
-          toastr.success(provider.name + " provider has been deleted!");
+          toastr.success(provider.name + " provider has been deleted!", "Deleted Successfully:");
         });
       }
   }
