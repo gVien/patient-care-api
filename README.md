@@ -1,6 +1,10 @@
 # patient-care-api
 
-An API to get patient care providers data. This API follows best practices with versioning, which is currently `v1`. See documentation to get the data.
+An API to get patient care providers data. This API follows best practices with versioning, which is currently `v1`. See documentation to get the data. There is a client side to consume the API.
+
+###### Technologies used
+1. Front End: Angular, HTML, CSS/Sass, Gulp, Bower, and some others
+2. Back End: Rails to power the API
 
 #### Getting Started
 
@@ -11,12 +15,15 @@ An API to get patient care providers data. This API follows best practices with 
 * `bundle exec rake db:create` then `bundle exec rake db:migrate`
 * `bundle exec rake db:seed`
 * run `rails s` to start server
-* visit your `localhost:3000`
+* visit the Rails server at `localhost:3000`, you now have the complete client + API app running but it is running on the last build from the client. To make changes in the client and rebuild, install `bower` and `npm` to get all the dependencies setup.
+* In the `client` directory, run `bower install & npm install`
+* `gulp serve` which will start the client server `localhost:3001`. Two servers are running now.
+* If `rails s` was not run, `gulp serve:full-stack` can be used to run both servers at the same time.
 
 ### Documentation
 #### GET `/api/v1/providers`
 
-Response: 
+Response:
 ```json
 
 [{
@@ -48,7 +55,7 @@ Response:
 
 #### GET `/api/v1/providers/{id}`
 
-Response: 
+Response:
 ```json
 {
     "id": 4,
@@ -118,4 +125,4 @@ Response
 ```
 
 #### DELETE `/api/v1/providers/{id}`
-This deletes the provider with the specified `id` 
+This deletes the provider with the specified `id`
