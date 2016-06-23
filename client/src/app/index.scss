@@ -84,6 +84,15 @@ $fa-font-path: "../../bower_components/font-awesome/fonts";
   z-index: 99999 !important;
 }
 
+/*.item:not(.ng-enter) { animation:none; }*/
+
+.ng-enter-stagger {
+  animation-delay:200ms !important;
+  -webkit-animation-delay:200ms !important;
+  animation-duration:0s !important;
+  -webkit-animation-duration:0s !important;
+}
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

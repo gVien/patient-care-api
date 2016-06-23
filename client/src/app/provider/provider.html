@@ -1,7 +1,7 @@
 <a ui-sref="createProvider" class="btn btn-primary btn-add-provider">Add a Care Provider</a>
 
 <div id="providers-section">
-  <div class="row" ng-repeat="provider in provider.providers">
+  <div class="row" animate-class="animated bounceInUp" ng-repeat="provider in provider.providers" remove-animation-afterload>
     <div class="col-sm-12">
       <div class="well well-lg">
         <div class="row">
