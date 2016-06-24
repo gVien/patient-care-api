@@ -30,7 +30,7 @@
        confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!",
        cancelButtonText: "No, cancel it!",
        closeOnConfirm: false,
-       closeOnCancel: true },
+       closeOnCancel: false },
        function(isConfirm){
          if (isConfirm) {
           provider.$delete(function() {
