@@ -18,10 +18,15 @@
       // reformat data to send to server
       // since the server only accepts `provider.provides` as an array
       // but the checkbox is giving an object
+
+      // THESE CODES NEED TO BE REFACTOR INTO A FILTER SINCE IT'S ALSO BEING USED
+      // IN PROVIDERUPDATE.CONTROLLER.JS
       var providesArr = [];
       var providesObj = $scope.provider.provides;
       for (var key in providesObj) {
-        providesArr.push(providesObj[key]);
+        if (providesObj.hasOwnProperty(key)) {
+          providesArr.push(providesObj[key]);
+        }
       }
 
       $scope.provider.provides = providesArr;
