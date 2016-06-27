@@ -41,4 +41,11 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # turn off deep_munge
+  # https://github.com/rails/rails/issues/13420
+  # https://github.com/rails/rails/issues/13766
+  # http://stackoverflow.com/questions/14647731/rails-converts-empty-arrays-into-nils-in-params-of-the-request
+  # security flaw is minimal when turning it off for `provides`
+  config.action_dispatch.perform_deep_munge = false
 end
